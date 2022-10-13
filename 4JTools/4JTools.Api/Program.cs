@@ -11,7 +11,7 @@ builder.Services.Configure<AutoMapperOptions>(builder.Configuration.GetSection("
 
 var app = builder.Build();
 
-app.UseExceptionHandling(app.Services.GetRequiredService<ILoggerFactory>());
+app.UseExceptionHandling();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -85,12 +85,12 @@ internal record WeatherForecast()
 
 internal static class ApplicationBuilderExtensions
 {
-    public static IApplicationBuilder UseExceptionHandling(this IApplicationBuilder app, ILoggerFactory loggerFactory)
+    public static IApplicationBuilder UseExceptionHandling(this IApplicationBuilder app)
     {
         app.UseExceptionHandler(new ExceptionHandlerOptions
         {
             AllowStatusCode404Response = true,
-            ExceptionHandler = c => GlobalExceptionHandling.HandleAsync(c, loggerFactory)
+            ExceptionHandler = c => GlobalExceptionHandling.HandleAsync(c)
         });
         return app;
     }

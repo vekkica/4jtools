@@ -6,10 +6,4 @@ IConfiguration config = new ConfigurationBuilder()
         .AddEnvironmentVariables()
         .Build();
 
-services.Configure<DocuSignWebhookAuthOptions>
-    (Configuration
-        .GetSection(
-            DocuSignWebhookAuthOptions
-            .DocuSignWebhookAuth));
-
 Console.WriteLine(config);
