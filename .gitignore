@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+/4JTools/4JTools/bin/Debug/net6.0
+/4JTools/4JTools/obj
+/4JTools/4JTools.Api/bin/Debug/net6.0
+/4JTools/4JTools.Api/obj
+/4JTools/4JTools.Samples/bin/Debug/net6.0
+/4JTools/4JTools.Samples/obj
+/4JTools/.vs
+/.vs
+/4JTools/4JTools.Api/Properties
