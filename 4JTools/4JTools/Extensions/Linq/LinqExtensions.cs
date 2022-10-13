@@ -83,5 +83,10 @@ namespace _4JTools.Extensions.Linq
                 action.Invoke(item);
             }
         }
+
+        public static TSource GetRandom<TSource>(this IEnumerable<TSource> source)
+        {
+            return source.OrderBy(i => Guid.NewGuid()).FirstOrDefault();
+        }
     }
 }
